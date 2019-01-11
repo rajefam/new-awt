@@ -1,0 +1,229 @@
+public class Booking extends JFrame implements ActionListener
+{
+
+	JLabel l1,l2,l3,l4,l5,l6;
+	JTextField tf1,tf2,tf3,tf4;
+	JButton bt1,bt2,bt3;
+	JFrame jf=new JFrame();
+	
+	String hotel[]={"Paradise","Lucky","Cafe Bahar","Barbecue","Astoria"};        
+	JComboBox cb=new JComboBox(hotel);    
+	  
+    
+    JCheckBox jc1=new JCheckBox("Mutton Biryani");
+    JCheckBox jc2=new JCheckBox("Mutton Kebab");
+    JCheckBox jc3=new JCheckBox("Chicken Biryani");
+    JCheckBox jc4=new JCheckBox("Chicekn Kebab");
+    JCheckBox jc5=new JCheckBox("Chicken 65");
+    JCheckBox jc6=new JCheckBox("Apollo Fish");
+    JCheckBox jc7=new JCheckBox("Paneer Butter Masala");
+    JCheckBox jc8=new JCheckBox("Butter naaN");
+    JCheckBox jc9=new JCheckBox("Veg Biryani");
+    JCheckBox jc10=new JCheckBox("Gobi Manchuria");
+	
+	 public Booking()
+	{
+        setSize(700, 700);  
+        setLayout(null);  
+        setTitle("*** Food Booking ***");  
+        l1 = new JLabel(" Welcome to our website. ");  
+        l1.setForeground(Color.blue);  
+        l1.setFont(new Font("Monotype Corsiva", Font.ITALIC, 20));
+        l2 = new JLabel("Name:",JLabel.CENTER);
+        l2.setFont(new Font("Arial",Font.BOLD,16));
+        l3 = new JLabel("Email-ID:",JLabel.CENTER); 
+        l3.setFont(new Font("Arial",Font.BOLD,16));
+        l4 = new JLabel("Phone No:",JLabel.CENTER); 
+        l4.setFont(new Font("Arial",Font.BOLD,16));
+        l5 = new JLabel("Select your Hotel :");
+        l5.setFont(new Font("Arial",Font.BOLD,16));
+        
+        l6=new JLabel("Select your Items :");
+        l6.setFont(new Font("Arial",Font.BOLD,16));
+        
+        
+        jf.add(cb);
+        jf.add(jc1);
+        jf.add(jc2);
+        jf.add(jc3);
+        jf.add(jc4);
+        jf.add(jc5);
+        jf.add(jc6);
+        jf.add(jc7);
+        jf.add(jc8);
+        jf.add(jc9);
+        jf.add(jc10);
+        
+        
+        jf.add(l1);
+        jf.add(l2);
+        jf.add(l3);
+        jf.add(l4);
+        jf.add(l5);
+        jf.add(l6);
+        
+        tf1=new JTextField();
+        tf2=new JTextField();
+        tf3=new JTextField();
+        tf4=new JTextField();
+        jf.add(tf1);
+        jf.add(tf2);
+        jf.add(tf3);
+        jf.add(tf4);
+        
+        bt1 = new JButton("Total Cost");  
+        bt2 = new JButton("Order");  
+        bt3= new JButton("Exit");
+        bt1.addActionListener(this);  
+        this.add(bt1);
+        bt2.addActionListener(this); 
+        this.add(bt2);
+        bt3.addActionListener(this);  
+        this.add(bt3);
+        
+
+        
+        l1.setBounds(200, 30, 400, 30);  //labels
+        l2.setBounds(80, 70, 90, 30);  
+        l3.setBounds(90, 110, 90, 30);  
+        l4.setBounds(95, 160, 90, 30);
+        l5.setBounds(100, 210, 200, 30);
+        l6.setBounds(100,270,200,30);
+        tf1.setBounds(300, 70, 200, 30);  //textfield
+        tf2.setBounds(300, 110, 200, 30);  
+        tf3.setBounds(300, 150, 200, 30);  
+        cb.setBounds(300, 210, 200, 30); // hotel
+        jc1.setBounds(300, 280, 120, 20); //items
+        jc2.setBounds(420, 280, 120, 20);
+        jc3.setBounds(540, 280, 120, 20);
+        jc4.setBounds(300, 310, 120, 20);
+        jc5.setBounds(420, 310, 120, 20);
+        jc6.setBounds(540, 310, 120, 20);
+        jc7.setBounds(300, 340, 160, 20);
+        jc8.setBounds(540, 340, 120, 20);
+        jc9.setBounds(300, 370, 120, 20);
+        jc10.setBounds(420, 370, 120, 20);
+        bt1.setBounds(100,550,120,40);  //buttons
+        bt2.setBounds(300,550,120,40);  
+        bt3.setBounds(500,550,120,40); 
+       
+        
+        this.add(l1);
+        this.add(l2);
+        this.add(l3);
+        this.add(l4);
+        this.add(l5);
+        this.add(l6);
+        this.add(tf1);
+        this.add(tf2);
+        this.add(tf3);
+        this.add(tf4);
+        this.add(cb);
+        this.add(jc1);
+        this.add(jc2);
+        this.add(jc3);
+        this.add(jc4);
+        this.add(jc5);
+        this.add(jc6);
+        this.add(jc7);
+        this.add(jc8);
+        this.add(jc9);
+        this.add(jc10);
+        
+       
+        
+        
+		setVisible(true);  
+
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
+	}
+	
+
+	
+	public void actionPerformed(ActionEvent e) 
+	{
+	
+		float amount =0;
+		String In_Voice="";
+		
+		if(e.getSource()==bt1)
+		{
+			
+			
+		if(jc1.isSelected())
+		{			
+			amount +=100;
+			In_Voice="Mutton Biryani : 100 \n ";
+			
+		}
+		 if(jc2.isSelected())
+		 {
+			 amount +=150;
+				In_Voice+="Mutton kebab : 150 \n ";
+		 }
+		 if(jc3.isSelected())
+		{
+			amount +=100;
+			In_Voice+="Chicken Biryani : 100 \n ";
+		}
+		if(jc4.isSelected())
+		{
+			amount +=130;
+			In_Voice+="Chicken kebab : 130 \n ";
+		}
+		if(jc5.isSelected())
+		{
+			amount +=100;
+			In_Voice+="Chicken 65 : 100 \n ";
+		}
+		if(jc6.isSelected())
+		{
+			amount +=150;
+			In_Voice+="Apollo Fish 150 \n ";
+		}
+		if(jc7.isSelected())
+		{
+			amount +=100;
+			In_Voice+="Panner Butter Masala : 100 \n ";
+		}
+		if(jc8.isSelected())
+		{
+			amount +=40;
+			In_Voice+="Butter Naan: 40 \n ";
+		}
+		if(jc9.isSelected())
+		{
+			amount +=100;
+			In_Voice+="Veg Biryani : 100 \n ";
+		}
+		if(jc10.isSelected())
+		{
+			amount +=80;
+			In_Voice+="Gobi Manchuria : 100 \n ";
+		}
+		In_Voice+="------------\n";
+		JOptionPane.showMessageDialog(this, In_Voice+"Total Cost :"+amount);
+		}
+	}
+	
+	
+	
+	public static void main(String[] args) 
+	{
+		
+		
+		Booking b=new  Booking();
+		MyImage m=new MyImage();
+		
+		b.setVisible(true);  
+
+		
+
+	}
+
+
+
+	
+}
+
